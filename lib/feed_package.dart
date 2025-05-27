@@ -34,3 +34,4 @@ export 'src/mural/presentation/mural_page.dart';
 export 'src/mural/presentation/widgets/card_mural_widgets.dart';
 export 'src/mural/presentation/widgets/form_post_mural_widget.dart';
 export 'src/mural/presentation/widgets/mural_view.dart';
+export 'src/mural/presentation/providers/mural_provider.dart';

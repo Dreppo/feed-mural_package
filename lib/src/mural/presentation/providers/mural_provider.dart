@@ -11,13 +11,13 @@ Future<List<MuralModel>> cards(Ref ref) async {
 }
 
 @riverpod
-Future<void> insertPost(Ref ref, MuralModel card) async {
+Future<void> insertPostMural(Ref ref, MuralModel card) async {
   final repository = ref.watch(muralRepositoryProvider);
   await repository.insertMuralCards(card);
 }
 
 @riverpod
-Future<void> deletPost(Ref ref, MuralModel card) async {
+Future<void> deletPostMural(Ref ref, MuralModel card) async {
   final repository = ref.watch(muralRepositoryProvider);
   await repository.deletMuralCards(card.id!);
 }

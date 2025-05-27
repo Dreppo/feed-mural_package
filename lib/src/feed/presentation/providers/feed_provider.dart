@@ -5,11 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../data/models/feed_model/feed_model.dart';
 
-
 part 'feed_provider.g.dart';
 
 @riverpod
-Stream<List<FeedModel>> feed(Ref ref)  {
+Stream<List<FeedModel>> feed(Ref ref) {
   return ref.watch(feedRepositoryProvider).findAllPosts();
 }
 
@@ -23,9 +22,8 @@ Future<List<FeedModel>> findSavedPostsProvider(Ref ref, int id) async {
   return await ref.watch(feedRepositoryProvider).findSavedPosts(id);
 }
 
-
 @riverpod
-Future<void> insertPost(Ref ref, FeedModel feed) async {
+Future<void> insertPostFeed(Ref ref, FeedModel feed) async {
   final repository = ref.watch(feedRepositoryProvider);
   await repository.insertPost(feed);
 }
@@ -61,7 +59,7 @@ Future<void> dislikePost(Ref ref, LikeModel like) async {
 }
 
 @riverpod
-Future<Map<String,dynamic>> couterlikePost(Ref ref, LikeModel like) async {
+Future<Map<String, dynamic>> couterlikePost(Ref ref, LikeModel like) async {
   final repository = ref.watch(feedRepositoryProvider);
   return await repository.couterLike(like);
 }
@@ -71,5 +69,3 @@ Future<void> insertLike(Ref ref, LikeModel like) async {
   final repository = ref.watch(feedRepositoryProvider);
   await repository.insertLike(like);
 }
-
-

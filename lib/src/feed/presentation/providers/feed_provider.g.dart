@@ -56,21 +56,15 @@ class FindPostByUserProviderFamily extends Family<AsyncValue<List<FeedModel>>> {
   const FindPostByUserProviderFamily();
 
   /// See also [findPostByUserProvider].
-  FindPostByUserProviderProvider call(
-    String id,
-  ) {
-    return FindPostByUserProviderProvider(
-      id,
-    );
+  FindPostByUserProviderProvider call(String id) {
+    return FindPostByUserProviderProvider(id);
   }
 
   @override
   FindPostByUserProviderProvider getProviderOverride(
     covariant FindPostByUserProviderProvider provider,
   ) {
-    return call(
-      provider.id,
-    );
+    return call(provider.id);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -92,24 +86,20 @@ class FindPostByUserProviderFamily extends Family<AsyncValue<List<FeedModel>>> {
 class FindPostByUserProviderProvider
     extends AutoDisposeFutureProvider<List<FeedModel>> {
   /// See also [findPostByUserProvider].
-  FindPostByUserProviderProvider(
-    String id,
-  ) : this._internal(
-          (ref) => findPostByUserProvider(
-            ref as FindPostByUserProviderRef,
-            id,
-          ),
-          from: findPostByUserProviderProvider,
-          name: r'findPostByUserProviderProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$findPostByUserProviderHash,
-          dependencies: FindPostByUserProviderFamily._dependencies,
-          allTransitiveDependencies:
-              FindPostByUserProviderFamily._allTransitiveDependencies,
-          id: id,
-        );
+  FindPostByUserProviderProvider(String id)
+    : this._internal(
+        (ref) => findPostByUserProvider(ref as FindPostByUserProviderRef, id),
+        from: findPostByUserProviderProvider,
+        name: r'findPostByUserProviderProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$findPostByUserProviderHash,
+        dependencies: FindPostByUserProviderFamily._dependencies,
+        allTransitiveDependencies:
+            FindPostByUserProviderFamily._allTransitiveDependencies,
+        id: id,
+      );
 
   FindPostByUserProviderProvider._internal(
     super._createNotifier, {
@@ -126,7 +116,7 @@ class FindPostByUserProviderProvider
   @override
   Override overrideWith(
     FutureOr<List<FeedModel>> Function(FindPostByUserProviderRef provider)
-        create,
+    create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -191,21 +181,15 @@ class FindSavedPostsProviderFamily extends Family<AsyncValue<List<FeedModel>>> {
   const FindSavedPostsProviderFamily();
 
   /// See also [findSavedPostsProvider].
-  FindSavedPostsProviderProvider call(
-    int id,
-  ) {
-    return FindSavedPostsProviderProvider(
-      id,
-    );
+  FindSavedPostsProviderProvider call(int id) {
+    return FindSavedPostsProviderProvider(id);
   }
 
   @override
   FindSavedPostsProviderProvider getProviderOverride(
     covariant FindSavedPostsProviderProvider provider,
   ) {
-    return call(
-      provider.id,
-    );
+    return call(provider.id);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -227,24 +211,20 @@ class FindSavedPostsProviderFamily extends Family<AsyncValue<List<FeedModel>>> {
 class FindSavedPostsProviderProvider
     extends AutoDisposeFutureProvider<List<FeedModel>> {
   /// See also [findSavedPostsProvider].
-  FindSavedPostsProviderProvider(
-    int id,
-  ) : this._internal(
-          (ref) => findSavedPostsProvider(
-            ref as FindSavedPostsProviderRef,
-            id,
-          ),
-          from: findSavedPostsProviderProvider,
-          name: r'findSavedPostsProviderProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$findSavedPostsProviderHash,
-          dependencies: FindSavedPostsProviderFamily._dependencies,
-          allTransitiveDependencies:
-              FindSavedPostsProviderFamily._allTransitiveDependencies,
-          id: id,
-        );
+  FindSavedPostsProviderProvider(int id)
+    : this._internal(
+        (ref) => findSavedPostsProvider(ref as FindSavedPostsProviderRef, id),
+        from: findSavedPostsProviderProvider,
+        name: r'findSavedPostsProviderProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$findSavedPostsProviderHash,
+        dependencies: FindSavedPostsProviderFamily._dependencies,
+        allTransitiveDependencies:
+            FindSavedPostsProviderFamily._allTransitiveDependencies,
+        id: id,
+      );
 
   FindSavedPostsProviderProvider._internal(
     super._createNotifier, {
@@ -261,7 +241,7 @@ class FindSavedPostsProviderProvider
   @override
   Override overrideWith(
     FutureOr<List<FeedModel>> Function(FindSavedPostsProviderRef provider)
-        create,
+    create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -316,7 +296,7 @@ class _FindSavedPostsProviderProviderElement
 String _$insertPostHash() => r'dbf9a66b018f096acf367d8ebcff4e3927fcc537';
 
 /// See also [insertPost].
-@ProviderFor(insertPost)
+@ProviderFor(insertPostFeed)
 const insertPostProvider = InsertPostFamily();
 
 /// See also [insertPost].
@@ -325,21 +305,15 @@ class InsertPostFamily extends Family<AsyncValue<void>> {
   const InsertPostFamily();
 
   /// See also [insertPost].
-  InsertPostProvider call(
-    FeedModel feed,
-  ) {
-    return InsertPostProvider(
-      feed,
-    );
+  InsertPostProvider call(FeedModel feed) {
+    return InsertPostProvider(feed);
   }
 
   @override
   InsertPostProvider getProviderOverride(
     covariant InsertPostProvider provider,
   ) {
-    return call(
-      provider.feed,
-    );
+    return call(provider.feed);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -360,24 +334,19 @@ class InsertPostFamily extends Family<AsyncValue<void>> {
 /// See also [insertPost].
 class InsertPostProvider extends AutoDisposeFutureProvider<void> {
   /// See also [insertPost].
-  InsertPostProvider(
-    FeedModel feed,
-  ) : this._internal(
-          (ref) => insertPost(
-            ref as InsertPostRef,
-            feed,
-          ),
-          from: insertPostProvider,
-          name: r'insertPostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$insertPostHash,
-          dependencies: InsertPostFamily._dependencies,
-          allTransitiveDependencies:
-              InsertPostFamily._allTransitiveDependencies,
-          feed: feed,
-        );
+  InsertPostProvider(FeedModel feed)
+    : this._internal(
+        (ref) => insertPostFeed(ref as InsertPostRef, feed),
+        from: insertPostProvider,
+        name: r'insertPostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$insertPostHash,
+        dependencies: InsertPostFamily._dependencies,
+        allTransitiveDependencies: InsertPostFamily._allTransitiveDependencies,
+        feed: feed,
+      );
 
   InsertPostProvider._internal(
     super._createNotifier, {
@@ -455,21 +424,15 @@ class UpdatePostFamily extends Family<AsyncValue<void>> {
   const UpdatePostFamily();
 
   /// See also [updatePost].
-  UpdatePostProvider call(
-    FeedModel feed,
-  ) {
-    return UpdatePostProvider(
-      feed,
-    );
+  UpdatePostProvider call(FeedModel feed) {
+    return UpdatePostProvider(feed);
   }
 
   @override
   UpdatePostProvider getProviderOverride(
     covariant UpdatePostProvider provider,
   ) {
-    return call(
-      provider.feed,
-    );
+    return call(provider.feed);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -490,24 +453,19 @@ class UpdatePostFamily extends Family<AsyncValue<void>> {
 /// See also [updatePost].
 class UpdatePostProvider extends AutoDisposeFutureProvider<void> {
   /// See also [updatePost].
-  UpdatePostProvider(
-    FeedModel feed,
-  ) : this._internal(
-          (ref) => updatePost(
-            ref as UpdatePostRef,
-            feed,
-          ),
-          from: updatePostProvider,
-          name: r'updatePostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$updatePostHash,
-          dependencies: UpdatePostFamily._dependencies,
-          allTransitiveDependencies:
-              UpdatePostFamily._allTransitiveDependencies,
-          feed: feed,
-        );
+  UpdatePostProvider(FeedModel feed)
+    : this._internal(
+        (ref) => updatePost(ref as UpdatePostRef, feed),
+        from: updatePostProvider,
+        name: r'updatePostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$updatePostHash,
+        dependencies: UpdatePostFamily._dependencies,
+        allTransitiveDependencies: UpdatePostFamily._allTransitiveDependencies,
+        feed: feed,
+      );
 
   UpdatePostProvider._internal(
     super._createNotifier, {
@@ -585,21 +543,15 @@ class DeletePostFamily extends Family<AsyncValue<void>> {
   const DeletePostFamily();
 
   /// See also [deletePost].
-  DeletePostProvider call(
-    FeedModel feed,
-  ) {
-    return DeletePostProvider(
-      feed,
-    );
+  DeletePostProvider call(FeedModel feed) {
+    return DeletePostProvider(feed);
   }
 
   @override
   DeletePostProvider getProviderOverride(
     covariant DeletePostProvider provider,
   ) {
-    return call(
-      provider.feed,
-    );
+    return call(provider.feed);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -620,24 +572,19 @@ class DeletePostFamily extends Family<AsyncValue<void>> {
 /// See also [deletePost].
 class DeletePostProvider extends AutoDisposeFutureProvider<void> {
   /// See also [deletePost].
-  DeletePostProvider(
-    FeedModel feed,
-  ) : this._internal(
-          (ref) => deletePost(
-            ref as DeletePostRef,
-            feed,
-          ),
-          from: deletePostProvider,
-          name: r'deletePostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$deletePostHash,
-          dependencies: DeletePostFamily._dependencies,
-          allTransitiveDependencies:
-              DeletePostFamily._allTransitiveDependencies,
-          feed: feed,
-        );
+  DeletePostProvider(FeedModel feed)
+    : this._internal(
+        (ref) => deletePost(ref as DeletePostRef, feed),
+        from: deletePostProvider,
+        name: r'deletePostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$deletePostHash,
+        dependencies: DeletePostFamily._dependencies,
+        allTransitiveDependencies: DeletePostFamily._allTransitiveDependencies,
+        feed: feed,
+      );
 
   DeletePostProvider._internal(
     super._createNotifier, {
@@ -715,21 +662,13 @@ class SavePostFamily extends Family<AsyncValue<void>> {
   const SavePostFamily();
 
   /// See also [savePost].
-  SavePostProvider call(
-    SaveModel save,
-  ) {
-    return SavePostProvider(
-      save,
-    );
+  SavePostProvider call(SaveModel save) {
+    return SavePostProvider(save);
   }
 
   @override
-  SavePostProvider getProviderOverride(
-    covariant SavePostProvider provider,
-  ) {
-    return call(
-      provider.save,
-    );
+  SavePostProvider getProviderOverride(covariant SavePostProvider provider) {
+    return call(provider.save);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -750,23 +689,19 @@ class SavePostFamily extends Family<AsyncValue<void>> {
 /// See also [savePost].
 class SavePostProvider extends AutoDisposeFutureProvider<void> {
   /// See also [savePost].
-  SavePostProvider(
-    SaveModel save,
-  ) : this._internal(
-          (ref) => savePost(
-            ref as SavePostRef,
-            save,
-          ),
-          from: savePostProvider,
-          name: r'savePostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$savePostHash,
-          dependencies: SavePostFamily._dependencies,
-          allTransitiveDependencies: SavePostFamily._allTransitiveDependencies,
-          save: save,
-        );
+  SavePostProvider(SaveModel save)
+    : this._internal(
+        (ref) => savePost(ref as SavePostRef, save),
+        from: savePostProvider,
+        name: r'savePostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$savePostHash,
+        dependencies: SavePostFamily._dependencies,
+        allTransitiveDependencies: SavePostFamily._allTransitiveDependencies,
+        save: save,
+      );
 
   SavePostProvider._internal(
     super._createNotifier, {
@@ -781,9 +716,7 @@ class SavePostProvider extends AutoDisposeFutureProvider<void> {
   final SaveModel save;
 
   @override
-  Override overrideWith(
-    FutureOr<void> Function(SavePostRef provider) create,
-  ) {
+  Override overrideWith(FutureOr<void> Function(SavePostRef provider) create) {
     return ProviderOverride(
       origin: this,
       override: SavePostProvider._internal(
@@ -844,21 +777,13 @@ class LikePostFamily extends Family<AsyncValue<void>> {
   const LikePostFamily();
 
   /// See also [likePost].
-  LikePostProvider call(
-    LikeModel like,
-  ) {
-    return LikePostProvider(
-      like,
-    );
+  LikePostProvider call(LikeModel like) {
+    return LikePostProvider(like);
   }
 
   @override
-  LikePostProvider getProviderOverride(
-    covariant LikePostProvider provider,
-  ) {
-    return call(
-      provider.like,
-    );
+  LikePostProvider getProviderOverride(covariant LikePostProvider provider) {
+    return call(provider.like);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -879,23 +804,19 @@ class LikePostFamily extends Family<AsyncValue<void>> {
 /// See also [likePost].
 class LikePostProvider extends AutoDisposeFutureProvider<void> {
   /// See also [likePost].
-  LikePostProvider(
-    LikeModel like,
-  ) : this._internal(
-          (ref) => likePost(
-            ref as LikePostRef,
-            like,
-          ),
-          from: likePostProvider,
-          name: r'likePostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$likePostHash,
-          dependencies: LikePostFamily._dependencies,
-          allTransitiveDependencies: LikePostFamily._allTransitiveDependencies,
-          like: like,
-        );
+  LikePostProvider(LikeModel like)
+    : this._internal(
+        (ref) => likePost(ref as LikePostRef, like),
+        from: likePostProvider,
+        name: r'likePostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$likePostHash,
+        dependencies: LikePostFamily._dependencies,
+        allTransitiveDependencies: LikePostFamily._allTransitiveDependencies,
+        like: like,
+      );
 
   LikePostProvider._internal(
     super._createNotifier, {
@@ -910,9 +831,7 @@ class LikePostProvider extends AutoDisposeFutureProvider<void> {
   final LikeModel like;
 
   @override
-  Override overrideWith(
-    FutureOr<void> Function(LikePostRef provider) create,
-  ) {
+  Override overrideWith(FutureOr<void> Function(LikePostRef provider) create) {
     return ProviderOverride(
       origin: this,
       override: LikePostProvider._internal(
@@ -973,21 +892,15 @@ class DislikePostFamily extends Family<AsyncValue<void>> {
   const DislikePostFamily();
 
   /// See also [dislikePost].
-  DislikePostProvider call(
-    LikeModel like,
-  ) {
-    return DislikePostProvider(
-      like,
-    );
+  DislikePostProvider call(LikeModel like) {
+    return DislikePostProvider(like);
   }
 
   @override
   DislikePostProvider getProviderOverride(
     covariant DislikePostProvider provider,
   ) {
-    return call(
-      provider.like,
-    );
+    return call(provider.like);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -1008,24 +921,19 @@ class DislikePostFamily extends Family<AsyncValue<void>> {
 /// See also [dislikePost].
 class DislikePostProvider extends AutoDisposeFutureProvider<void> {
   /// See also [dislikePost].
-  DislikePostProvider(
-    LikeModel like,
-  ) : this._internal(
-          (ref) => dislikePost(
-            ref as DislikePostRef,
-            like,
-          ),
-          from: dislikePostProvider,
-          name: r'dislikePostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$dislikePostHash,
-          dependencies: DislikePostFamily._dependencies,
-          allTransitiveDependencies:
-              DislikePostFamily._allTransitiveDependencies,
-          like: like,
-        );
+  DislikePostProvider(LikeModel like)
+    : this._internal(
+        (ref) => dislikePost(ref as DislikePostRef, like),
+        from: dislikePostProvider,
+        name: r'dislikePostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$dislikePostHash,
+        dependencies: DislikePostFamily._dependencies,
+        allTransitiveDependencies: DislikePostFamily._allTransitiveDependencies,
+        like: like,
+      );
 
   DislikePostProvider._internal(
     super._createNotifier, {
@@ -1103,21 +1011,15 @@ class CouterlikePostFamily extends Family<AsyncValue<Map<String, dynamic>>> {
   const CouterlikePostFamily();
 
   /// See also [couterlikePost].
-  CouterlikePostProvider call(
-    LikeModel like,
-  ) {
-    return CouterlikePostProvider(
-      like,
-    );
+  CouterlikePostProvider call(LikeModel like) {
+    return CouterlikePostProvider(like);
   }
 
   @override
   CouterlikePostProvider getProviderOverride(
     covariant CouterlikePostProvider provider,
   ) {
-    return call(
-      provider.like,
-    );
+    return call(provider.like);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -1139,24 +1041,20 @@ class CouterlikePostFamily extends Family<AsyncValue<Map<String, dynamic>>> {
 class CouterlikePostProvider
     extends AutoDisposeFutureProvider<Map<String, dynamic>> {
   /// See also [couterlikePost].
-  CouterlikePostProvider(
-    LikeModel like,
-  ) : this._internal(
-          (ref) => couterlikePost(
-            ref as CouterlikePostRef,
-            like,
-          ),
-          from: couterlikePostProvider,
-          name: r'couterlikePostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$couterlikePostHash,
-          dependencies: CouterlikePostFamily._dependencies,
-          allTransitiveDependencies:
-              CouterlikePostFamily._allTransitiveDependencies,
-          like: like,
-        );
+  CouterlikePostProvider(LikeModel like)
+    : this._internal(
+        (ref) => couterlikePost(ref as CouterlikePostRef, like),
+        from: couterlikePostProvider,
+        name: r'couterlikePostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$couterlikePostHash,
+        dependencies: CouterlikePostFamily._dependencies,
+        allTransitiveDependencies:
+            CouterlikePostFamily._allTransitiveDependencies,
+        like: like,
+      );
 
   CouterlikePostProvider._internal(
     super._createNotifier, {
@@ -1235,21 +1133,15 @@ class InsertLikeFamily extends Family<AsyncValue<void>> {
   const InsertLikeFamily();
 
   /// See also [insertLike].
-  InsertLikeProvider call(
-    LikeModel like,
-  ) {
-    return InsertLikeProvider(
-      like,
-    );
+  InsertLikeProvider call(LikeModel like) {
+    return InsertLikeProvider(like);
   }
 
   @override
   InsertLikeProvider getProviderOverride(
     covariant InsertLikeProvider provider,
   ) {
-    return call(
-      provider.like,
-    );
+    return call(provider.like);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -1270,24 +1162,19 @@ class InsertLikeFamily extends Family<AsyncValue<void>> {
 /// See also [insertLike].
 class InsertLikeProvider extends AutoDisposeFutureProvider<void> {
   /// See also [insertLike].
-  InsertLikeProvider(
-    LikeModel like,
-  ) : this._internal(
-          (ref) => insertLike(
-            ref as InsertLikeRef,
-            like,
-          ),
-          from: insertLikeProvider,
-          name: r'insertLikeProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$insertLikeHash,
-          dependencies: InsertLikeFamily._dependencies,
-          allTransitiveDependencies:
-              InsertLikeFamily._allTransitiveDependencies,
-          like: like,
-        );
+  InsertLikeProvider(LikeModel like)
+    : this._internal(
+        (ref) => insertLike(ref as InsertLikeRef, like),
+        from: insertLikeProvider,
+        name: r'insertLikeProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$insertLikeHash,
+        dependencies: InsertLikeFamily._dependencies,
+        allTransitiveDependencies: InsertLikeFamily._allTransitiveDependencies,
+        like: like,
+      );
 
   InsertLikeProvider._internal(
     super._createNotifier, {
@@ -1352,5 +1239,6 @@ class _InsertLikeProviderElement extends AutoDisposeFutureProviderElement<void>
   @override
   LikeModel get like => (origin as InsertLikeProvider).like;
 }
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

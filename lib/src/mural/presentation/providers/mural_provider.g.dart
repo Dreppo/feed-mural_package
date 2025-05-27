@@ -46,30 +46,22 @@ class _SystemHash {
 }
 
 /// See also [insertPost].
-@ProviderFor(insertPost)
-const insertPostProvider = InsertPostFamily();
+@ProviderFor(insertPostMural)
+const insertPost = InsertPostFamilyMural();
 
 /// See also [insertPost].
-class InsertPostFamily extends Family<AsyncValue<void>> {
+class InsertPostFamilyMural extends Family<AsyncValue<void>> {
   /// See also [insertPost].
-  const InsertPostFamily();
+  const InsertPostFamilyMural();
 
   /// See also [insertPost].
-  InsertPostProvider call(
-    MuralModel card,
-  ) {
-    return InsertPostProvider(
-      card,
-    );
+  InsertPost call(MuralModel card) {
+    return InsertPost(card);
   }
 
   @override
-  InsertPostProvider getProviderOverride(
-    covariant InsertPostProvider provider,
-  ) {
-    return call(
-      provider.card,
-    );
+  InsertPost getProviderOverride(covariant InsertPost provider) {
+    return call(provider.card);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -88,28 +80,24 @@ class InsertPostFamily extends Family<AsyncValue<void>> {
 }
 
 /// See also [insertPost].
-class InsertPostProvider extends AutoDisposeFutureProvider<void> {
+class InsertPost extends AutoDisposeFutureProvider<void> {
   /// See also [insertPost].
-  InsertPostProvider(
-    MuralModel card,
-  ) : this._internal(
-          (ref) => insertPost(
-            ref as InsertPostRef,
-            card,
-          ),
-          from: insertPostProvider,
-          name: r'insertPostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$insertPostHash,
-          dependencies: InsertPostFamily._dependencies,
-          allTransitiveDependencies:
-              InsertPostFamily._allTransitiveDependencies,
-          card: card,
-        );
+  InsertPost(MuralModel card)
+    : this._internal(
+        (ref) => insertPostMural(ref as InsertPostMuralRef, card),
+        from: insertPost,
+        name: r'insertPost',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$insertPostHash,
+        dependencies: InsertPostFamilyMural._dependencies,
+        allTransitiveDependencies:
+            InsertPostFamilyMural._allTransitiveDependencies,
+        card: card,
+      );
 
-  InsertPostProvider._internal(
+  InsertPost._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -123,12 +111,12 @@ class InsertPostProvider extends AutoDisposeFutureProvider<void> {
 
   @override
   Override overrideWith(
-    FutureOr<void> Function(InsertPostRef provider) create,
+    FutureOr<void> Function(InsertPostMuralRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
-      override: InsertPostProvider._internal(
-        (ref) => create(ref as InsertPostRef),
+      override: InsertPost._internal(
+        (ref) => create(ref as InsertPostMuralRef),
         from: from,
         name: null,
         dependencies: null,
@@ -146,7 +134,7 @@ class InsertPostProvider extends AutoDisposeFutureProvider<void> {
 
   @override
   bool operator ==(Object other) {
-    return other is InsertPostProvider && other.card == card;
+    return other is InsertPost && other.card == card;
   }
 
   @override
@@ -160,23 +148,23 @@ class InsertPostProvider extends AutoDisposeFutureProvider<void> {
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-mixin InsertPostRef on AutoDisposeFutureProviderRef<void> {
+mixin InsertPostMuralRef on AutoDisposeFutureProviderRef<void> {
   /// The parameter `card` of this provider.
   MuralModel get card;
 }
 
 class _InsertPostProviderElement extends AutoDisposeFutureProviderElement<void>
-    with InsertPostRef {
+    with InsertPostMuralRef {
   _InsertPostProviderElement(super.provider);
 
   @override
-  MuralModel get card => (origin as InsertPostProvider).card;
+  MuralModel get card => (origin as InsertPost).card;
 }
 
 String _$deletPostHash() => r'b75277f621c4f58214ec876ec9d2c05c6683abca';
 
 /// See also [deletPost].
-@ProviderFor(deletPost)
+@ProviderFor(deletPostMural)
 const deletPostProvider = DeletPostFamily();
 
 /// See also [deletPost].
@@ -185,21 +173,13 @@ class DeletPostFamily extends Family<AsyncValue<void>> {
   const DeletPostFamily();
 
   /// See also [deletPost].
-  DeletPostProvider call(
-    MuralModel card,
-  ) {
-    return DeletPostProvider(
-      card,
-    );
+  DeletPostProvider call(MuralModel card) {
+    return DeletPostProvider(card);
   }
 
   @override
-  DeletPostProvider getProviderOverride(
-    covariant DeletPostProvider provider,
-  ) {
-    return call(
-      provider.card,
-    );
+  DeletPostProvider getProviderOverride(covariant DeletPostProvider provider) {
+    return call(provider.card);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -220,23 +200,19 @@ class DeletPostFamily extends Family<AsyncValue<void>> {
 /// See also [deletPost].
 class DeletPostProvider extends AutoDisposeFutureProvider<void> {
   /// See also [deletPost].
-  DeletPostProvider(
-    MuralModel card,
-  ) : this._internal(
-          (ref) => deletPost(
-            ref as DeletPostRef,
-            card,
-          ),
-          from: deletPostProvider,
-          name: r'deletPostProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$deletPostHash,
-          dependencies: DeletPostFamily._dependencies,
-          allTransitiveDependencies: DeletPostFamily._allTransitiveDependencies,
-          card: card,
-        );
+  DeletPostProvider(MuralModel card)
+    : this._internal(
+        (ref) => deletPostMural(ref as DeletPostRef, card),
+        from: deletPostProvider,
+        name: r'deletPostProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$deletPostHash,
+        dependencies: DeletPostFamily._dependencies,
+        allTransitiveDependencies: DeletPostFamily._allTransitiveDependencies,
+        card: card,
+      );
 
   DeletPostProvider._internal(
     super._createNotifier, {
@@ -251,9 +227,7 @@ class DeletPostProvider extends AutoDisposeFutureProvider<void> {
   final MuralModel card;
 
   @override
-  Override overrideWith(
-    FutureOr<void> Function(DeletPostRef provider) create,
-  ) {
+  Override overrideWith(FutureOr<void> Function(DeletPostRef provider) create) {
     return ProviderOverride(
       origin: this,
       override: DeletPostProvider._internal(
@@ -301,5 +275,6 @@ class _DeletPostProviderElement extends AutoDisposeFutureProviderElement<void>
   @override
   MuralModel get card => (origin as DeletPostProvider).card;
 }
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

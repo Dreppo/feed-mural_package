@@ -39,7 +39,9 @@ class MuralPage extends ConsumerWidget {
               },
             );
           },
-          error: (error, stackTrace) => Center(child: Text('Erro: $error')),
+          error: (error, stackTrace) {
+            Center(child: Text('Erro: $error'));
+          },
           loading: () => const Center(child: CircularProgressIndicator()),
         ),
       ),

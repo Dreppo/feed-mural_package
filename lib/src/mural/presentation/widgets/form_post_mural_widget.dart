@@ -55,7 +55,7 @@ class _PostFormWidgetState extends ConsumerState<PostFormMuralWidget> {
         cor: corValor,
       );
 
-      await ref.read(insertPostProvider(mural).future);
+      await ref.read(insertPost(mural).future);
 
       ScaffoldMessenger.of(
         context,
