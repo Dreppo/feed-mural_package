@@ -1,4 +1,4 @@
-import 'package:feed_package/src/user/domain/repostitories/user_repository.dart';
+import 'package:mural_feed_package/src/user/domain/repostitories/user_repository.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../models/user_model.dart';

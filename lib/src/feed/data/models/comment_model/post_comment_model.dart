@@ -1,4 +1,4 @@
-import 'package:feed_package/src/user/data/models/user_model.dart';
+import 'package:mural_feed_package/src/user/data/models/user_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'post_comment_model.freezed.dart';
 part 'post_comment_model.g.dart';

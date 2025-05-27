@@ -1,6 +1,6 @@
-import 'package:feed_package/src/feed/data/models/comment_model/post_comment_model.dart';
-import 'package:feed_package/src/feed/data/models/feed_model/feed_model.dart';
-import 'package:feed_package/src/feed/presentation/providers/comment_notifier_provider.dart';
+import 'package:mural_feed_package/src/feed/data/models/comment_model/post_comment_model.dart';
+import 'package:mural_feed_package/src/feed/data/models/feed_model/feed_model.dart';
+import 'package:mural_feed_package/src/feed/presentation/providers/comment_notifier_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -43,8 +43,10 @@ class _NewCommentWidgetState extends ConsumerState<NewCommentWidget> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
               ),
             ),
           ),
@@ -65,8 +67,9 @@ class _NewCommentWidgetState extends ConsumerState<NewCommentWidget> {
                       "${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}:${now.second.toString().padLeft(2, '0')}",
                 );
                 ref
-                    .read(commentNotifierProviderProvider(widget.feed.id!)
-                        .notifier)
+                    .read(
+                      commentNotifierProviderProvider(widget.feed.id!).notifier,
+                    )
                     .insertComment(userComment);
                 _commentController.clear();
               }

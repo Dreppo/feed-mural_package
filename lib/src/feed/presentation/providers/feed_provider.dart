@@ -1,6 +1,6 @@
-import 'package:feed_package/src/feed/data/models/like_model/like_post_model.dart';
-import 'package:feed_package/src/feed/data/models/save_model/save_model.dart';
-import 'package:feed_package/src/feed/data/repositories/feed_repository_impl.dart';
+import 'package:mural_feed_package/src/feed/data/models/like_model/like_post_model.dart';
+import 'package:mural_feed_package/src/feed/data/models/save_model/save_model.dart';
+import 'package:mural_feed_package/src/feed/data/repositories/feed_repository_impl.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../data/models/feed_model/feed_model.dart';

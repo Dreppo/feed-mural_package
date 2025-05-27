@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:feed_package/src/feed/data/models/feed_model/feed_model.dart';
-import 'package:feed_package/src/feed/presentation/providers/feed_service_provider.dart';
-import 'package:feed_package/src/feed/presentation/providers/inser_post_state_provider.dart';
+import 'package:mural_feed_package/src/feed/data/models/feed_model/feed_model.dart';
+import 'package:mural_feed_package/src/feed/presentation/providers/feed_service_provider.dart';
+import 'package:mural_feed_package/src/feed/presentation/providers/inser_post_state_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
@@ -57,8 +57,8 @@ class _PostFormWidgetState extends ConsumerState<PostFormFeedWidget> {
         );
 
         await ref.read(
-            insertPostServiceProvider(file: _selectedImage!, feed: feed)
-                .future);
+          insertPostServiceProvider(file: _selectedImage!, feed: feed).future,
+        );
 
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Post enviado com sucesso!')),
@@ -66,9 +66,9 @@ class _PostFormWidgetState extends ConsumerState<PostFormFeedWidget> {
 
         Navigator.of(context).pop(true);
       } catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erro ao enviar o post: $e')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Erro ao enviar o post: $e')));
       }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -83,9 +83,7 @@ class _PostFormWidgetState extends ConsumerState<PostFormFeedWidget> {
       appBar: AppBar(
         title: Text(
           'Crie sua postagem',
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.onPrimary,
-          ),
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
         ),
         iconTheme: IconThemeData(
           color: Theme.of(context).colorScheme.onPrimary,
@@ -113,16 +111,14 @@ class _PostFormWidgetState extends ConsumerState<PostFormFeedWidget> {
                         color: Theme.of(context).colorScheme.outline,
                       ),
                     ),
-                    child: _selectedImage == null
-                        ? Icon(
-                            Icons.add_a_photo,
-                            size: 50,
-                            color: Theme.of(context).colorScheme.primary,
-                          )
-                        : Image.file(
-                            _selectedImage!,
-                            fit: BoxFit.cover,
-                          ),
+                    child:
+                        _selectedImage == null
+                            ? Icon(
+                              Icons.add_a_photo,
+                              size: 50,
+                              color: Theme.of(context).colorScheme.primary,
+                            )
+                            : Image.file(_selectedImage!, fit: BoxFit.cover),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -132,9 +128,7 @@ class _PostFormWidgetState extends ConsumerState<PostFormFeedWidget> {
                   decoration: const InputDecoration(
                     labelText: 'Titulo',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16),
-                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
                     ),
                   ),
                   maxLength: 65,
@@ -153,9 +147,7 @@ class _PostFormWidgetState extends ConsumerState<PostFormFeedWidget> {
                   decoration: const InputDecoration(
                     labelText: 'Descrição',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16),
-                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
                     ),
                     //border radius
                   ),
@@ -180,16 +172,17 @@ class _PostFormWidgetState extends ConsumerState<PostFormFeedWidget> {
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
-                  child: ref.watch(uploadStateProvider)
-                      ? CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation(
-                            Theme.of(context).colorScheme.primary,
+                  child:
+                      ref.watch(uploadStateProvider)
+                          ? CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation(
+                              Theme.of(context).colorScheme.primary,
+                            ),
+                          )
+                          : Text(
+                            'Postar',
+                            //color
                           ),
-                        )
-                      : Text(
-                          'Postar',
-                          //color
-                        ),
                 ),
               ],
             ),

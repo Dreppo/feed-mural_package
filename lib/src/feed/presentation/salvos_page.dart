@@ -1,7 +1,7 @@
-import 'package:feed_package/src/core/widgets/ima_error_widget.dart';
-import 'package:feed_package/src/core/widgets/loading_widget.dart';
-import 'package:feed_package/src/feed/presentation/providers/feed_provider.dart';
-import 'package:feed_package/src/feed/presentation/widgets/feed_view.dart';
+import 'package:mural_feed_package/src/core/widgets/ima_error_widget.dart';
+import 'package:mural_feed_package/src/core/widgets/loading_widget.dart';
+import 'package:mural_feed_package/src/feed/presentation/providers/feed_provider.dart';
+import 'package:mural_feed_package/src/feed/presentation/widgets/feed_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,9 +20,7 @@ class _SalvosPageState extends ConsumerState<SalvosPage> {
       appBar: AppBar(
         title: Text(
           'Salvos',
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.onPrimary,
-          ),
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
         ),
         leading: IconButton(
           icon: Icon(

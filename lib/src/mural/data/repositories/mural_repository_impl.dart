@@ -1,7 +1,6 @@
-import 'package:feed_package/feed_package.dart';
-import 'package:feed_package/src/mural/domain/repositories/mural_repository.dart';
+import 'package:mural_feed_package/mural-feed_package.dart';
+import 'package:mural_feed_package/src/mural/domain/repositories/mural_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/mural_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

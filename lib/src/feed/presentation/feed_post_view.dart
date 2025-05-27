@@ -1,5 +1,5 @@
-import 'package:feed_package/src/core/widgets/comment_section_widget.dart';
-import 'package:feed_package/src/feed/data/models/feed_model/feed_model.dart';
+import 'package:mural_feed_package/src/core/widgets/comment_section_widget.dart';
+import 'package:mural_feed_package/src/feed/data/models/feed_model/feed_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -36,26 +36,20 @@ class FeedPostViewPage extends ConsumerWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        color: Colors.white70,
-                        fontSize: 18,
-                      ),
+                    color: Colors.white70,
+                    fontSize: 18,
+                  ),
                 ),
                 background: Stack(
                   fit: StackFit.expand,
                   children: [
-                    Image.network(
-                      post.url!,
-                      fit: BoxFit.cover,
-                    ),
+                    Image.network(post.url!, fit: BoxFit.cover),
                     Container(
                       decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment(0, -0.5),
                           end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.transparent,
-                            Colors.black87,
-                          ],
+                          colors: [Colors.transparent, Colors.black87],
                         ),
                       ),
                     ),
@@ -72,7 +66,9 @@ class FeedPostViewPage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween, // Alinha os ícones nas extremidades
+                mainAxisAlignment:
+                    MainAxisAlignment
+                        .spaceBetween, // Alinha os ícones nas extremidades
                 children: [
                   IconButton(
                     onPressed: () {},
@@ -99,7 +95,9 @@ class FeedPostViewPage extends ConsumerWidget {
                         context: context,
                         isScrollControlled: true,
                         builder: (context) {
-                          return CommentSectionWidget(feed: post); // Abre o modal com a seção de comentários
+                          return CommentSectionWidget(
+                            feed: post,
+                          ); // Abre o modal com a seção de comentários
                         },
                       );
                     },

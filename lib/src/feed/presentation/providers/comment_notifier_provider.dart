@@ -1,5 +1,5 @@
-import 'package:feed_package/src/feed/data/models/comment_model/post_comment_model.dart';
-import 'package:feed_package/src/feed/data/repositories/post_comment_repository_impl.dart';
+import 'package:mural_feed_package/src/feed/data/models/comment_model/post_comment_model.dart';
+import 'package:mural_feed_package/src/feed/data/repositories/post_comment_repository_impl.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'comment_notifier_provider.g.dart';

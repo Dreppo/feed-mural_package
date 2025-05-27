@@ -13,7 +13,7 @@ class MuralPage extends ConsumerWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.only(top: 30.0, left: 16.0, right: 16.0),
         child: muralState.when(
           data: (muralList) {
             if (muralList.isEmpty) {

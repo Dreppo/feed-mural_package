@@ -1,6 +1,6 @@
-import 'package:feed_package/src/core/providers/supabase_provider.dart';
-import 'package:feed_package/src/core/repositories/comment_repository.dart';
-import 'package:feed_package/src/feed/data/models/comment_model/post_comment_model.dart';
+import 'package:mural_feed_package/src/core/providers/supabase_provider.dart';
+import 'package:mural_feed_package/src/core/repositories/comment_repository.dart';
+import 'package:mural_feed_package/src/feed/data/models/comment_model/post_comment_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -12,8 +12,9 @@ class PostCommentRepositoryImpl implements CommentRepository {
 
   PostCommentRepositoryImpl({required this.supabase});
   @override
-  Future<List<PostCommentModel>> findAllPostComments(
-      {required int postId}) async {
+  Future<List<PostCommentModel>> findAllPostComments({
+    required int postId,
+  }) async {
     final response = await supabase
         .from('comentario_post')
         .select('*, profile:fk_user_id(*)')
@@ -23,11 +24,13 @@ class PostCommentRepositoryImpl implements CommentRepository {
   }
 
   @override
-  Future<void> insertPostComment(
-      {required PostCommentModel postCommentModel}) async {
-    final commentJson = postCommentModel.toJson()
-      ..remove('profile')
-      ..remove('id');
+  Future<void> insertPostComment({
+    required PostCommentModel postCommentModel,
+  }) async {
+    final commentJson =
+        postCommentModel.toJson()
+          ..remove('profile')
+          ..remove('id');
     await supabase.from('comentario_post').insert(commentJson);
   }
 }

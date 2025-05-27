@@ -1,34 +1,27 @@
-import 'package:feed_package/src/feed/data/models/like_model/like_post_model.dart';
-import 'package:feed_package/src/feed/presentation/feed_post_view.dart';
-import 'package:feed_package/src/feed/presentation/providers/feed_provider.dart';
+import 'package:mural_feed_package/src/feed/data/models/like_model/like_post_model.dart';
+import 'package:mural_feed_package/src/feed/presentation/feed_post_view.dart';
+import 'package:mural_feed_package/src/feed/presentation/providers/feed_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import '../../data/models/feed_model/feed_model.dart';
 
 class FeedCardWidget extends ConsumerWidget {
-  const FeedCardWidget({
-    super.key,
-    required this.feed,
-  });
+  const FeedCardWidget({super.key, required this.feed});
 
   final FeedModel feed;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     //TODO: Rever e remover
-    LikeModel like = LikeModel(
-      userId: 2,
-      postId: 50,
-    );
+    LikeModel like = LikeModel(userId: 2, postId: 50);
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => FeedPostViewPage(
-              post: feed,
-              scrollToComments: false,
-            ),
+            builder:
+                (context) =>
+                    FeedPostViewPage(post: feed, scrollToComments: false),
           ),
         );
       },
@@ -66,10 +59,7 @@ class FeedCardWidget extends ConsumerWidget {
                       gradient: LinearGradient(
                         begin: Alignment(0, -0.5),
                         end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.transparent,
-                          Colors.black87,
-                        ],
+                        colors: [Colors.transparent, Colors.black87],
                       ),
                     ),
                     alignment: const Alignment(-0.9, 0.9),
@@ -77,12 +67,8 @@ class FeedCardWidget extends ConsumerWidget {
                       padding: const EdgeInsets.only(left: 16.0),
                       child: Text(
                         feed.titulo,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium!
-                            .copyWith(
-                              color: Colors.white70,
-                            ),
+                        style: Theme.of(context).textTheme.headlineMedium!
+                            .copyWith(color: Colors.white70),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.start,
@@ -100,7 +86,9 @@ class FeedCardWidget extends ConsumerWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 8.0, horizontal: 16),
+                        vertical: 8.0,
+                        horizontal: 16,
+                      ),
                       child: Text(
                         style: Theme.of(context).textTheme.bodyLarge,
                         feed.descricao,
@@ -130,10 +118,11 @@ class FeedCardWidget extends ConsumerWidget {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => FeedPostViewPage(
-                                post: feed,
-                                scrollToComments: true,
-                              ),
+                              builder:
+                                  (context) => FeedPostViewPage(
+                                    post: feed,
+                                    scrollToComments: true,
+                                  ),
                             ),
                           );
                         },
@@ -141,7 +130,7 @@ class FeedCardWidget extends ConsumerWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ],

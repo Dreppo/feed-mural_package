@@ -1,10 +1,10 @@
 import 'dart:io';
-import 'package:feed_package/src/core/repositories/bucket_repository.dart';
-import 'package:feed_package/src/core/services/bucket_service.dart';
-import 'package:feed_package/src/feed/data/models/feed_model/feed_model.dart';
-import 'package:feed_package/src/feed/data/repositories/feed_bucket_repository_impl.dart';
-import 'package:feed_package/src/feed/data/repositories/feed_repository_impl.dart';
-import 'package:feed_package/src/feed/domain/repositories/feed_repository.dart';
+import 'package:mural_feed_package/src/core/repositories/bucket_repository.dart';
+import 'package:mural_feed_package/src/core/services/bucket_service.dart';
+import 'package:mural_feed_package/src/feed/data/models/feed_model/feed_model.dart';
+import 'package:mural_feed_package/src/feed/data/repositories/feed_bucket_repository_impl.dart';
+import 'package:mural_feed_package/src/feed/data/repositories/feed_repository_impl.dart';
+import 'package:mural_feed_package/src/feed/domain/repositories/feed_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -14,10 +14,7 @@ class FeedService implements BucketService {
   final BucketRepository bucketRepository;
   final FeedRepository feedRepository;
 
-  FeedService({
-    required this.bucketRepository,
-    required this.feedRepository,
-  });
+  FeedService({required this.bucketRepository, required this.feedRepository});
 
   @override
   Future<void> insertBucket(File file, FeedModel feed) async {
